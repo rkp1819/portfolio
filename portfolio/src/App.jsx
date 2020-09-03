@@ -2,20 +2,23 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import Header from "./components/Header";
-import Stars from "./components/Stars";
-import Works from "./components/Works";
-import ContentBody from "./components/ContentBody";
-import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
-import ContactForm from "./components/ContactForm";
+import Home from "./components/Home";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  Redirect,
+} from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Header />
-      <ContentBody />
-      <Contact/>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
